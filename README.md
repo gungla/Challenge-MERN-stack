@@ -22,7 +22,7 @@
 
 ## Configurar .env
 
-PORT=
-NODE_ENV=
-MONGO_URI=
-JWT_SECRET=
+- PORT=
+- NODE_ENV=
+- MONGO_URI=
+- JWT_SECRET=
