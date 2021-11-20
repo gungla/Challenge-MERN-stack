@@ -19,3 +19,10 @@
 - Marcar pedidos como opción de entrega
 - Proceso de pago (envío, estados, etc.)
 - Seeder de base de datos (productos y usuarios)
+
+## Configurar .env
+
+PORT=
+NODE_ENV=
+MONGO_URI=
+JWT_SECRET=
