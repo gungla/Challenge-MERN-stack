@@ -1,0 +1,194 @@
+@import 'variables.scss';
+
+html{
+  background: $html;
+}
+
+body{
+  background: $body_bg;
+}
+
+.bg_nav{
+  background: $bg_nav;
+}
+
+.acceder_on a{
+  color: $btn_warning_bg;
+  font-weight: $weigth1;
+}
+
+.acceder_on a:hover{
+  text-decoration: none;
+  color: $btn_warning_bg_h;
+  font-weight: $weigth2;
+}
+
+.botones{
+  color: $btn_warning_txt;
+  background: $btn_warning_bg;
+  border: 1px solid $btn_warning_border;
+}
+
+.botones:hover{
+  color: $btn_warning_txt;
+  background: $btn_warning_bg_h;
+  border: 1px solid $btn_warning_border_h;
+}
+
+main {
+  min-height: $main_altura;
+  background: $main_bg;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
+.rating span {
+  margin: 0.1rem;
+}
+
+.navbar-custom {
+  background-color: #ffffff;
+}
+
+.card{
+  -webkit-box-shadow: 3px 3px 10px 3px #ddd;
+  -moz-box-shadow: 3px 3px 10px 3px #ddd;
+  box-shadow: 3px 3px 10px 3px #ddd;
+}
+
+.cardSize {
+  height: auto;
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+}
+
+.cardSize img{
+  transform: scale(1); 
+  transition:transform .3s ease-out;
+}
+
+.cardSize img:hover{
+  margin:auto;
+  transform: scale(1.1); 
+}
+
+
+.search_form {
+  width: 215px;
+  height: 50px;
+  position: relative;
+}
+
+form input {
+  width: 100%;
+  height: 100%;
+  padding: 0 50px 0 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.search-button {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  border-radius: 25px;
+  background-color: #fff;
+  text-decoration: none;
+}
+
+.fa-search{
+  right: 15px;
+  top: 15px;
+}
+
+.thumb-admin{
+  width: 25px;
+  height: 25px;
+}
+
+
+
+.thumb-container {
+  display: inline-block;
+  position: relative;
+}
+.acathumb {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: all .4s ease-out;
+  backface-visibility: hidden;
+}
+.hoverText {
+  position: absolute;
+  top:0;
+  height: 100%;
+  transition: all .4s ease-in-out;
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+}
+.thumb-container:hover .hoverText {
+  opacity: 1;
+}
+.caption {
+  background: -webkit-linear-gradient(360deg, $overlay_1 10%, $overlay_2 360%); 
+  background: -moz-linear-gradient(360deg, $overlay_1 10%, $overlay_2 360%); 
+  background: linear-gradient(360deg, $overlay_1 10%, $overlay_2 360%);
+  color: white;
+  font-size: 40px;
+  padding-top:32%;
+  border-radius: 6px;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.not{
+  width: 50%;
+  height: auto;
+}
+
+.margenContent{
+  margin-top: 80px;
+}
+
+main{
+  background: $bg;
+}
+
+.descp .catss{
+  margin-top: 20px;
+}
+.hoverText p, .descp p{
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+.hoverText p small, .descp small{
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
