@@ -79,9 +79,9 @@ const ProductListScreen = ({ history, match }) => {
         </Col>
         <Col className='text-right'>
           <Button
-            className='my-3'
+            className='my-3 botones'
             onClick={createProductHandler}
-            variant='warning'>
+            >
             <i className='fas fa-plus'></i> Crear producto
           </Button>
         </Col>

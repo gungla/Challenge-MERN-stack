@@ -142,10 +142,10 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item>
                 <Button
                   type='button'
-                  className='btn-block'
+                  className='btn-block botones'
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
-                  variant='warning'>
+                  >
                   Realizar pedido
                 </Button>
               </ListGroup.Item>

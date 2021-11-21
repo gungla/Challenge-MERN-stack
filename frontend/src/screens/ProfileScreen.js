@@ -112,7 +112,7 @@ const ProfileScreen = ({ location, history }) => {
               }></Form.Control>
           </Form.Group>
 
-          <Button type='submit' variant='warning'>
+          <Button type='submit' className='btn-block botones'>
             Actualizar
           </Button>
         </Form>

@@ -35,6 +35,13 @@ body{
   border: 1px solid $btn_warning_border_h;
 }
 
+.opacidad{
+  color: $btn_warning_txt;
+  background: $opacidad;
+  border: 1px solid $opacidad;
+  opacity: .5;
+}
+
 main {
   min-height: $main_altura;
   background: $main_bg;
@@ -191,4 +198,8 @@ main{
   font-size: 14px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.gr{
+  font-size: 22px;
 }

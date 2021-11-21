@@ -72,8 +72,6 @@ const ProductScreen = ({ history, match }) => {
           <Row>
             <Col md={6} className='descp'>
               <Image src={product.image} alt={product.name} fluid />
-              {/* <p className='catss'>Categoría: <small>{product.category}</small></p>
-              <p>Marca: <small>{product.brand}</small></p> */}
             </Col>
             <Col md={3}>
               <ListGroup variant='flush'>
@@ -139,9 +137,8 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className='btn-block'
+                      className='btn-block botones'
                       typr='button'
-                      variant='warning'
                       disabled={product.countInStock === 0}>
                       AÑADIR AL CARRITO
                     </Button>
@@ -150,9 +147,8 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className='btn-block'
+                      className='btn-block opacidad'
                       typr='button'
-                      variant='warning'
                       disabled>
                       AÑADIR AL CARRITO
                     </Button>
