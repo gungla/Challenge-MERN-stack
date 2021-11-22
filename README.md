@@ -1,7 +1,7 @@
 # Challenge Full Stack MERN - Frontend & Backend
 
-> Plataforma de comercio electrónico construida con MERN stack.
-> Mongo, express, react, node, sass y Redux.
+> Plataforma de comercio electrónico construida con MERN stack.\
+> Mongo, express, react, node, sass y redux.
 
 # Alojado en Heroku
 
