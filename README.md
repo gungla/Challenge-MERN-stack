@@ -4,7 +4,7 @@
 
 # Alojado en Heroku
 
-> Visitame : [enlace al sitio!](https://pendiente/)
+> Visitame : [enlace al sitio!](https://gungla-mern.herokuapp.com/)
 
 ## Características
 
@@ -17,7 +17,7 @@
 - Gestión de usuarios administradores
 - Página de detalles de la orden de administrador
 - Marcar pedidos como opción de entrega
-- Proceso de pago (envío, estados, etc.)
+- Proceso del pedido (envío, estados, etc.)
 - Seeder de base de datos (productos y usuarios)
 
 ## Configurar .env
