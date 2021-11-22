@@ -1,6 +1,7 @@
 # Challenge Full Stack MERN - Frontend & Backend
 
-> Plataforma de comercio electrónico construida con MERN stack y Redux.
+> Plataforma de comercio electrónico construida con MERN stack.
+> Mongo, express, react, node, sass y Redux.
 
 # Alojado en Heroku
 
@@ -11,14 +12,15 @@
 - Carrito de compras con todas las funciones
 - Reseñas y valoraciones de productos
 - Paginación de productos
+- Página de detalle de producto
 - Función de búsqueda de productos
-- Perfil de usuario con pedidos
-- Gestión de productos de administración
-- Gestión de usuarios administradores
-- Página de detalles de la orden de administrador
-- Marcar pedidos como opción de entrega
-- Proceso del pedido (envío, estados, etc.)
-- Seeder de base de datos (productos y usuarios)
+- Perfil de usuario y el usuario puede ver el estado de su pedido
+- Gestión de productos solo perfil de administrador
+- Gestión de usuarios solo perfil de administrador
+- Página de detalles de la orden solo perfil administrador
+- Marcar pedidos como entregado solo perfil administrador
+- El administrador puede procesar el estado del pedido
+- Seeder base de datos (productos y usuarios)
 
 ## Configurar .env
 
