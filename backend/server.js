@@ -1,5 +1,6 @@
 import path from 'path'
 import express from 'express'
+import logger from "./winston.js"
 import dotenv from 'dotenv'
 import colors from 'colors'
 import morgan from 'morgan'
@@ -52,6 +53,9 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(notFound)
 app.use(errorHandler)
+
+logger.error("Esto es un error log")
+logger.warn("Esto es un error log")
 
 const PORT = process.env.PORT || 5000
 
