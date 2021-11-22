@@ -6,6 +6,10 @@ node_modules/
 /.pnp
 .pnp.js
 
+# logs
+/logs
+logs
+
 # testing
 /coverage
 
