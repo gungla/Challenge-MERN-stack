@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Rating = ({ value, text, color }) => {
   return (
@@ -67,4 +67,4 @@ Rating.defaultProps = {
   color: '#ffd500',
 }
 
-export default Rating
+export default Rating;

@@ -1,15 +1,15 @@
-import winston from 'winston'
-const { transports, format, createLogger } = winston
-const { combine, printf } = format
+import winston from 'winston';
+const { transports, format, createLogger } = winston;
+const { combine, printf } = format;
 
 // Creo timeStamp 
-const logTime = new Date().toLocaleDateString()
+const logTime = new Date().toLocaleDateString();
 // Creo un log personalizado
 const customLog = printf(({ level, message }) => {
     return `Nivel:[${ level }] LogTime: [${ logTime }] Mensaje:-[${ message }]`
 })
 
-const date = new Date()
+const date = new Date();
 const newdate = `${ date.getDate() }-${ date.getMonth() }-${ date.getFullYear() }`
 const options = {
     info: {
@@ -44,4 +44,4 @@ const logger = new createLogger({
     ], exitOnError: false
 })
 
-export default logger
+export default logger;

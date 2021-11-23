@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react'
-//import axios from 'axios'
-import { Link } from 'react-router-dom'
-import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 import {
   getOrderDetails,
   deliverOrder,
-} from '../actions/orderActions'
+} from '../actions/orderActions';
 import {
   ORDER_DELIVER_RESET,
-} from '../constants/orderConstants'
+} from '../constants/orderConstants';
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id
@@ -176,4 +175,4 @@ const OrderScreen = ({ match, history }) => {
   )
 }
 
-export default OrderScreen
+export default OrderScreen;

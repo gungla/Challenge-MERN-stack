@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Image, ListGroup } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup } from 'react-bootstrap';
 import Loader from './Loader';
 
 function About() {
@@ -40,4 +40,4 @@ function About() {
     )
 }
 
-export default About
+export default About;

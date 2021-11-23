@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import FormContainer from '../components/FormContainer'
-import CheckoutSteps from '../components/CheckoutSteps'
-import { saveShippingAddress } from '../actions/cartActions'
+import React, { useEffect, useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import FormContainer from '../components/FormContainer';
+import CheckoutSteps from '../components/CheckoutSteps';
+import { saveShippingAddress } from '../actions/cartActions';
 import Loader from '../components/Loader';
 
 const ShippingScreen = ({ history }) => {
@@ -90,4 +90,4 @@ const ShippingScreen = ({ history }) => {
   )
 }
 
-export default ShippingScreen
+export default ShippingScreen;

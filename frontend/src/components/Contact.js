@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Image, ListGroup, Button } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Button } from 'react-bootstrap';
 import Loader from './Loader';
 
 function Contact() {
@@ -47,4 +47,4 @@ function Contact() {
     )
 }
 
-export default Contact
+export default Contact;
