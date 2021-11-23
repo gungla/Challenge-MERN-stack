@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button } from 'react-bootstrap'
 import Loader from './Loader';
 
@@ -16,12 +15,9 @@ function Contact() {
 
     return (
         <>
-        <Link className='btn btn-light my-3' to='/'>
-            Volver
-        </Link>
         {loading && <Loader/>}
         {!loading && (  
-        <Row>
+        <Row className='mgt'>
             <Col md={6} className='descp'>
                 <Image src='https://avatars.githubusercontent.com/u/379321?v=4' fluid />
             </Col>

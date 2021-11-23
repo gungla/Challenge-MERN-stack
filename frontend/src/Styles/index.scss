@@ -203,3 +203,39 @@ main{
 .gr{
   font-size: 22px;
 }
+
+.sinborde{
+  border: none;
+}
+
+.sinborde h3{
+  padding: 0;
+}
+
+.stock-on{
+  color: green;
+  font-weight: bold;
+}
+
+.stock-off{
+  color: red;
+  font-weight: bold;
+}
+
+.mgt{
+  margin-top: 45px;
+}
+
+
+::-webkit-scrollbar{
+  width: 0px;
+  background-color: transparent !important;
+}
+::-webkit-scrollbar-track{
+  border-radius: 0px;
+  background-color: transparent !important;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 0px;
+  background-color: transparent !important;
+}

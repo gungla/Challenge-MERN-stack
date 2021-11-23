@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
 import { addToCart, removeFromCart } from '../actions/cartActions'
+import Loader from '../components/Loader';
 
 const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id
@@ -15,10 +16,16 @@ const CartScreen = ({ match, location, history }) => {
   const cart = useSelector((state) => state.cart)
   const { cartItems } = cart
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty))
     }
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, [dispatch, productId, qty])
 
   const removeFromCartHandler = (id) => {
@@ -30,7 +37,10 @@ const CartScreen = ({ match, location, history }) => {
   }
 
   return (
-    <Row>
+    <>
+    {loading && <Loader/>}
+    {!loading && ( 
+    <Row> 
       <Col md={8}>
         <h1>Carrito de compra</h1>
         {cartItems.length === 0 ? (
@@ -38,9 +48,9 @@ const CartScreen = ({ match, location, history }) => {
             Tu carro esta vacio <Link to='/'>Volver</Link>
           </Message>
         ) : (
-          <ListGroup variant='flush'>
+          <ListGroup variant='flush' className='sinborde'>
             {cartItems.map((item) => (
-              <ListGroup.Item key={item.product}>
+              <ListGroup.Item key={item.product} className='sinborde'>
                 <Row>
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
@@ -81,8 +91,8 @@ const CartScreen = ({ match, location, history }) => {
       </Col>
       <Col md={4}>
         <Card>
-          <ListGroup variant='flush'>
-            <ListGroup.Item>
+          <ListGroup variant='flush' className='sinborde'>
+            <ListGroup.Item className='sinborde'>
               <h2>
                 Productos ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
               </h2>
@@ -91,7 +101,7 @@ const CartScreen = ({ match, location, history }) => {
                 .reduce((acc, item) => acc + item.qty * item.price, 0)
                 .toFixed(2)}
             </ListGroup.Item>
-            <ListGroup.Item>
+            <ListGroup.Item className='sinborde'>
               <Button
                 type='button'
                 className='btn-block botones'
@@ -105,6 +115,8 @@ const CartScreen = ({ match, location, history }) => {
         </Card>
       </Col>
     </Row>
+    )}
+    </>
   )
 }
 

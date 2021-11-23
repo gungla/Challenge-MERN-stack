@@ -37,6 +37,11 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
+            <LinkContainer to='/'>
+              <Nav.Link>
+                Tienda
+              </Nav.Link>
+            </LinkContainer>
             <LinkContainer to='/about'>
               <Nav.Link>
                 Sobre mi

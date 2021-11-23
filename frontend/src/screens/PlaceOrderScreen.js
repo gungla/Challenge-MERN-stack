@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,6 +7,8 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../actions/orderActions'
 //import { ORDER_CREATE_RESET } from '../constants/orderConstants'
 //import { USER_DETAILS_RESET } from '../constants/userConstants'
+import Loader from '../components/Loader';
+
 
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch()
@@ -21,7 +23,7 @@ const PlaceOrderScreen = ({ history }) => {
   cart.itemsPrice = addDecimals(
     cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
   )
-  cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100)
+  cart.shippingPrice = addDecimals(cart.itemsPrice > 10 ? 0 : 10)
   cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)))
   cart.totalPrice = (
     Number(cart.itemsPrice) +
@@ -32,12 +34,18 @@ const PlaceOrderScreen = ({ history }) => {
   const orderCreate = useSelector((state) => state.orderCreate)
   const { order, success, error } = orderCreate
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     if (success) {
       history.push(`/order/${order._id}`)
       //dispatch({ type: USER_DETAILS_RESET })
       //dispatch({ type: ORDER_CREATE_RESET })
     }
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
     // eslint-disable-next-line
   }, [history, success])
 
@@ -58,10 +66,12 @@ const PlaceOrderScreen = ({ history }) => {
 
   return (
     <>
-      <CheckoutSteps step1 step2 step3 step4 />
+      <CheckoutSteps step1 step2 step3 />
+      {loading && <Loader/>}
+      {!loading && (
       <Row>
         <Col md={8}>
-          <ListGroup variant='flush'>
+          <ListGroup variant='flush' className='sinborde'>
             <ListGroup.Item>
               <h2>Envio</h2>
               <p>
@@ -72,7 +82,7 @@ const PlaceOrderScreen = ({ history }) => {
               </p>
             </ListGroup.Item>
 
-            <ListGroup.Item>
+            <ListGroup.Item className='sinborde'>
               <h2>Pedido</h2>
               {cart.cartItems.length === 0 ? (
                 <Message>Tu carrito esta vacío</Message>
@@ -108,38 +118,38 @@ const PlaceOrderScreen = ({ history }) => {
 
         <Col md={4}>
           <Card>
-            <ListGroup variant='flush'>
-              <ListGroup.Item>
+            <ListGroup variant='flush' className='sinborde'>
+              <ListGroup.Item className='sinborde'>
                 <h2>Resumen de compra</h2>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Row>
                   <Col>Subtotal</Col>
                   <Col>$ {cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Row>
                   <Col>Envio</Col>
                   <Col>$ {cart.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Row>
                   <Col>Tax</Col>
                   <Col>$ {cart.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Row>
                   <Col>Total</Col>
                   <Col>$ {cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 {error && <Message variant='danger'>{error}</Message>}
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Button
                   type='button'
                   className='btn-block botones'
@@ -153,6 +163,7 @@ const PlaceOrderScreen = ({ history }) => {
           </Card>
         </Col>
       </Row>
+      )}
     </>
   )
 }

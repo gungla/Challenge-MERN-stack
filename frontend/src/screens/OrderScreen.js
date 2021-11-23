@@ -126,29 +126,29 @@ const OrderScreen = ({ match, history }) => {
 
         <Col md={4}>
           <Card>
-            <ListGroup variant='flush'>
-              <ListGroup.Item>
+            <ListGroup variant='flush' className='sinborde'>
+              <ListGroup.Item className='sinborde'>
                 <h2>Resumen compra</h2>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Row>
                   <Col>Subtotal</Col>
                   <Col>$ {order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Row>
                   <Col>Envio</Col>
                   <Col>$ {order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Row>
                   <Col>Tax</Col>
                   <Col>$ {order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item className='sinborde'>
                 <Row>
                   <Col>Total</Col>
                   <Col>$ {order.totalPrice}</Col>
@@ -159,7 +159,7 @@ const OrderScreen = ({ match, history }) => {
               {userInfo &&
                 userInfo.isAdmin &&
                 !order.isDelivered && (
-                  <ListGroup.Item>
+                  <ListGroup.Item className='sinborde'>
                     <Button
                       type='button'
                       className='btn btn-block botones'

@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { saveShippingAddress } from '../actions/cartActions'
+import Loader from '../components/Loader';
 
 const ShippingScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart)
@@ -22,7 +23,19 @@ const ShippingScreen = ({ history }) => {
     history.push('/placeorder')
   }
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [])
+
   return (
+    <>
+    {loading && <Loader/>}
+    {!loading && ( 
     <FormContainer>
       <CheckoutSteps step1 step2 />
       <h1>Envio</h1>
@@ -72,6 +85,8 @@ const ShippingScreen = ({ history }) => {
         </Button>
       </Form>
     </FormContainer>
+    )}
+    </>
   )
 }
 
