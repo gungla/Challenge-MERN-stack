@@ -31,4 +31,4 @@
 
 # Documentación
 
-> Ver : [documetación](https://gungla-mern.herokuapp.com/api/products)
+> Ver : [documentación](https://gungla-mern.herokuapp.com/api/products)
