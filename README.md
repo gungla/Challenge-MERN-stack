@@ -24,7 +24,11 @@
 
 ## Configurar .env
 
-- PORT=
-- NODE_ENV=
-- MONGO_URI=
-- JWT_SECRET=
+- PORT= Puerto
+- NODE_ENV= Modo
+- MONGO_URI= URL a la base de datos
+- JWT_SECRET= Texto
+
+# Documentación
+
+> (https://gungla-mern.herokuapp.com/api/products)
