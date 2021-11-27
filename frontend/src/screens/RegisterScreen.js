@@ -9,6 +9,8 @@ import { register } from '../actions/userActions';
 
 const RegisterScreen = ({ location, history }) => {
   const [name, setName] = useState('')
+  const [surname, setSurname] = useState('')
+  const [age, setAge] = useState('')
   const [email, setEmail] = useState('')
   const [ci, setCi] = useState('')
   const [password, setPassword] = useState('')
@@ -33,7 +35,7 @@ const RegisterScreen = ({ location, history }) => {
     if (password !== confirmPassword) {
       setMessage('Las contraseñas no coinciden')
     } else {
-      dispatch(register(name, email, ci, password))
+      dispatch(register(name, surname, age, email, ci, password))
     }
   }
 
@@ -44,6 +46,7 @@ const RegisterScreen = ({ location, history }) => {
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
+
         <Form.Group controlId='name'>
           <Form.Label>Nombre</Form.Label>
           <Form.Control
@@ -51,6 +54,24 @@ const RegisterScreen = ({ location, history }) => {
             placeholder='Ingrese su nombre'
             value={name}
             onChange={(e) => setName(e.target.value)}></Form.Control>
+        </Form.Group>
+
+        <Form.Group controlId='surname'>
+          <Form.Label>Apellido</Form.Label>
+          <Form.Control
+            type='surname'
+            placeholder='Ingrese su apellido'
+            value={surname}
+            onChange={(e) => setSurname(e.target.value)}></Form.Control>
+        </Form.Group>
+
+        <Form.Group controlId='age'>
+          <Form.Label>Edad</Form.Label>
+          <Form.Control
+            type='age'
+            placeholder='Ingrese su edad'
+            value={age}
+            onChange={(e) => setAge(e.target.value)}></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='email'>

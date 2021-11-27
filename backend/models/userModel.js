@@ -5,20 +5,29 @@ const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, 'El nombre es obligatorio'],
+    },
+    surname: {
+      type: String,
+      required: [true, 'El apellido es obligatorio'],
+    },
+    age: {
+      type: Number, min: 18, max: 95,
+      required: [true, 'La edad es obligatoria, entre 18 y 95 años'],
     },
     email: {
       type: String,
-      required: true,
+      required: [true, 'El email es obligatorio'],
       unique: true,
     },
     ci: {
-      type: String,
-      required: true,
+      type: Number,
+      required: [true, 'La cédula de identidad es oblogatios. 8 carácteres númericos'],
+      unique: true,
     },
     password: {
       type: String,
-      required: true,
+      required: [true, 'La contraseña es obligatoria'],
     },
     isAdmin: {
       type: Boolean,

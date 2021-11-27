@@ -28,7 +28,7 @@ const authUser = asyncHandler(async (req, res) => {
 // POST /api/users
 // Publica
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, ci, password } = req.body
+  const { name, surname, age, email, ci, password } = req.body
 
   const userExists = await User.findOne({ email })
 
@@ -39,6 +39,8 @@ const registerUser = asyncHandler(async (req, res) => {
 
   const user = await User.create({
     name,
+    surname,
+    age,
     email,
     ci,
     password,
@@ -48,6 +50,8 @@ const registerUser = asyncHandler(async (req, res) => {
     res.status(201).json({
       _id: user._id,
       name: user.name,
+      surname: user.surname,
+      age: user.age,
       email: user.email,
       ci: user.ci,
       isAdmin: user.isAdmin,
@@ -69,6 +73,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
     res.json({
       _id: user._id,
       name: user.name,
+      surname: user.surname,
+      age: user.age,
       email: user.email,
       ci: user.ci,
       isAdmin: user.isAdmin,
@@ -87,6 +93,8 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
   if (user) {
     user.name = req.body.name || user.name
+    user.surname = req.body.surname || user.surname
+    user.age = req.body.age || user.age
     user.email = req.body.email || user.email
     user.ci = req.body.ci || user.ci
     if (req.body.password) {
@@ -98,6 +106,8 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     res.json({
       _id: updatedUser._id,
       name: updatedUser.name,
+      surname: updatedUser.surname,
+      age: updatedUser.age,
       email: updatedUser.email,
       ci: updatedUser.ci,
       isAdmin: updatedUser.isAdmin,
@@ -154,6 +164,8 @@ const updateUser = asyncHandler(async (req, res) => {
 
   if (user) {
     user.name = req.body.name || user.name
+    user.surname = req.body.surname || user.surname
+    user.age = req.body.age || user.age
     user.email = req.body.email || user.email
     user.ci = req.body.ci || user.ci
     user.isAdmin = req.body.isAdmin
@@ -163,6 +175,8 @@ const updateUser = asyncHandler(async (req, res) => {
     res.json({
       _id: updatedUser._id,
       name: updatedUser.name,
+      surname: updatedUser.surname,
+      age: updatedUser.age,
       email: updatedUser.email,
       ci: updatedUser.ci,
       isAdmin: updatedUser.isAdmin,

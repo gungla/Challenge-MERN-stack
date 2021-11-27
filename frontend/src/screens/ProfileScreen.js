@@ -10,6 +10,8 @@ import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
 
 const ProfileScreen = ({ location, history }) => {
   const [name, setName] = useState('')
+  const [surname, setSurname] = useState('')
+  const [age, setAge] = useState('')
   const [email, setEmail] = useState('')
   const [ci, setCi] = useState('')
   const [password, setPassword] = useState('')
@@ -40,6 +42,8 @@ const ProfileScreen = ({ location, history }) => {
         dispatch(listMyOrders())
       } else {
         setName(user.name)
+        setSurname(user.surname)
+        setAge(user.age)
         setEmail(user.email)
         setCi(user.ci)
       }
@@ -51,7 +55,7 @@ const ProfileScreen = ({ location, history }) => {
     if (password !== confirmPassword) {
       setMessage('Las contraseñas no coinciden')
     } else {
-      dispatch(updateUserProfile({ id: user._id, name, email, ci, password }))
+      dispatch(updateUserProfile({ id: user._id, name, surname, age, email, ci, password }))
     }
   }
 
@@ -64,6 +68,7 @@ const ProfileScreen = ({ location, history }) => {
         {success && <Message variant='success'>Perfil actualizado</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
+
           <Form.Group controlId='name'>
             <Form.Label>Nombre</Form.Label>
             <Form.Control
@@ -73,6 +78,24 @@ const ProfileScreen = ({ location, history }) => {
               disabled
               onChange={(e) => setName(e.target.value)}></Form.Control>
           </Form.Group>
+
+          <Form.Group controlId='surname'>
+            <Form.Label>Apellido</Form.Label>
+            <Form.Control
+              type='surname'
+              placeholder='Ingrese su apellido'
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}></Form.Control>
+         </Form.Group>
+
+         <Form.Group controlId='age'>
+            <Form.Label>Edad</Form.Label>
+            <Form.Control
+              type='age'
+              placeholder='Ingrese su edad'
+              value={age}
+              onChange={(e) => setAge(e.target.value)}></Form.Control>
+         </Form.Group>
 
           <Form.Group controlId='email'>
             <Form.Label>Email</Form.Label>
