@@ -30,7 +30,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -63,7 +63,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -96,7 +96,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -133,7 +133,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -166,7 +166,7 @@ export const listOrders = () => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 

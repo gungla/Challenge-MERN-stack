@@ -78,7 +78,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -110,7 +110,7 @@ export const createProduct = () => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -144,7 +144,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -183,7 +183,7 @@ export const createProductReview =
       const config = {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Aca ${userInfo.token}`,
+          Authorization: `Bearer ${userInfo.token}`,
         },
       }
 

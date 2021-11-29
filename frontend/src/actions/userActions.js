@@ -126,7 +126,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -160,7 +160,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -200,7 +200,7 @@ export const listUsers = () => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -233,7 +233,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
@@ -264,7 +264,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Aca ${userInfo.token}`,
+        Authorization: `Bearer ${userInfo.token}`,
       },
     }
 
