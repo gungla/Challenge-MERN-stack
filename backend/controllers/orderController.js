@@ -1,5 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
+import nodemailer from 'nodemailer';
 
 // Creo nueva orden
 // POST /api/orders
@@ -33,6 +34,44 @@ const addOrderItems = asyncHandler(async (req, res) => {
 
     res.status(201).json(createdOrder)
   }
+
+  // create transporter object with smtp server details
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    auth: {
+        user: process.env.ETHEREAL_MAIL,
+        pass: process.env.ETHEREAL_PASS
+    }
+  });
+
+  // send email
+  await transporter.sendMail({
+    from: process.env.GMAIL_MAIL,
+    to: req.user.email,
+    subject: 'Detalle de compra de MERN STACK Backend',
+    html: `
+      <h1>Número de orden ${req.user._id}</h1>
+      <p>
+        Nombre ${req.user.name} ${req.user.surname}
+      </p>
+      <p>
+        Precio initario $ ${req.body.itemsPrice}
+      </p>
+      <p>
+        Decuento $ ${req.body.shippingPrice}
+      </p>
+      <p>
+        TAX $ ${req.body.taxPrice}
+      </p>
+      <p>
+        Total $ ${req.body.totalPrice}
+      </p>
+      `
+  });
+
+  console.log('Envio mail al administrador con el núermo de pedido y datos a ethereal');
+
 })
 
 // Get traigo la orden por ID
@@ -69,6 +108,32 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
     res.status(404)
     throw new Error('Orden no encontrada')
   }
+
+  // create transporter object with smtp server details
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587,
+    auth: {
+        user: process.env.GMAIL_MAIL,
+        pass: process.env.GMAIL_PASS
+    }
+  });
+
+  // send email
+  await transporter.sendMail({
+    from: req.user.email,
+    to: process.env.GMAIL_MAIL,
+    subject: 'Detalle de compra de MERN STACK Backend',
+    html: `
+      <h1>Número de orden ${req.user._id}</h1>
+      <p>
+       Su pedido fue completado
+      </p>
+      `
+  });
+
+  console.log('Envio mail al usuario avisandole que su pedido esta completado');
+
 })
 
 // Get pedidos de usuarios registrados
