@@ -31,7 +31,7 @@ const LoginScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Iniciar sesión</h1>
+      <h1 className='text-center'>Iniciar sesión</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
@@ -57,7 +57,7 @@ const LoginScreen = ({ location, history }) => {
           Iniciar sesión
         </Button>
       </Form>
-      <Row className='py-3'>
+      <Row className='py-3 text-center'>
         <Col>
             Nuevo cliente?{' '}
           <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>

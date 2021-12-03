@@ -43,17 +43,15 @@ const OrderScreen = ({ match, history }) => {
     }
 
     if (!order || successDeliver) {
-      dispatch({ type: ORDER_DELIVER_RESET })
-      dispatch(getOrderDetails(orderId))
-     } else if (!order.isPaid) {
-      // eslint 
-    }
+      dispatch({ type: ORDER_DELIVER_RESET });
+      dispatch(getOrderDetails(orderId));
+     } 
   }, [dispatch, orderId, successDeliver, order, history, userInfo])
 
-
   const deliverHandler = () => {
-    dispatch(deliverOrder(order))
+    dispatch(deliverOrder(order));
   }
+
 
   return loading ? (
     <Loader />

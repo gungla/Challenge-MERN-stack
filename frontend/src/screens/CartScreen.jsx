@@ -38,11 +38,14 @@ const CartScreen = ({ match, location, history }) => {
 
   return (
     <>
+    <br />
+    <div className='center-text'>
+      <h1>Catalogo de productos</h1>
+    </div>
     {loading && <Loader/>}
     {!loading && ( 
     <Row> 
       <Col md={8}>
-        <h1>Carrito de compra</h1>
         {cartItems.length === 0 ? (
           <Message>
             Tu carro esta vacio <Link to='/'>Volver</Link>
@@ -51,14 +54,14 @@ const CartScreen = ({ match, location, history }) => {
           <ListGroup variant='flush' className='sinborde'>
             {cartItems.map((item) => (
               <ListGroup.Item key={item.product} className='sinborde'>
-                <Row>
+                <Row className="cec">
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
-                  <Col md={3}>
+                  <Col md={5}>
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
-                  <Col md={2}>${item.price}</Col>
+                  <Col md={1}>${item.price}</Col>
                   <Col md={2}>
                     <Form.Control
                       as='select'

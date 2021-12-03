@@ -9,86 +9,86 @@ import { getUserDetails, updateUser } from '../actions/userActions';
 import { USER_UPDATE_RESET } from '../constants/userConstants';
 
 const UserEditScreen = ({ match, history }) => {
-  const userId = match.params.id
+  const userId = match.params.id;
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const userDetails = useSelector((state) => state.userDetails)
-  const { loading, error, user } = userDetails
+  const userDetails = useSelector((state) => state.userDetails);
+  const { loading, error, user } = userDetails;
 
-  const userUpdate = useSelector((state) => state.userUpdate)
+  const userUpdate = useSelector((state) => state.userUpdate);
   const {
     loading: loadingUpdate,
     error: errorUpdate,
     success: successUpdate,
-  } = userUpdate
+  } = userUpdate;
 
   useEffect(() => {
     if (successUpdate) {
-      dispatch({ type: USER_UPDATE_RESET })
-      history.push('/admin/userlist')
+      dispatch({ type: USER_UPDATE_RESET });
+      history.push('/admin/userlist');
     } else {
       if (!user.name || user._id !== userId) {
-        dispatch(getUserDetails(userId))
+        dispatch(getUserDetails(userId));
       } else {
-        setName(user.name)
-        setEmail(user.email)
+        setName(user.name),
+        setEmail(user.email),
         setIsAdmin(user.isAdmin)
       }
     }
-  }, [dispatch, userId, user, history, successUpdate])
+  }, [dispatch, userId, user, history, successUpdate]);
 
   const submitHandler = (e) => {
-    e.preventDefault()
-    dispatch(updateUser({ _id: userId, name, email, isAdmin }))
+    e.preventDefault();
+    dispatch(updateUser({ _id: userId, name, email, isAdmin }));
   }
 
   return (
     <>
-      <Link to='/admin/userlist' className='btn btn-light my-3'>
+      <Link to="/admin/userlist" className="btn btn-light my-3">
         Volver
       </Link>
       <FormContainer>
         <h1>Editar Usuario</h1>
         {loadingUpdate && <Loader />}
-        {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
+        {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger'>{error}</Message>
+          <Message variant="danger">{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
+            <Form.Group controlId="name">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
-                type='name'
-                placeholder='Ingrese su nombre'
+                type="name"
+                placeholder="Ingrese su nombre"
                 value={name}
                 onChange={(e) => setName(e.target.value)}></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='email'>
+            <Form.Group controlId="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
-                type='email'
-                placeholder='Ingrese su email'
+                type="email"
+                placeholder="Ingrese su email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='isadmin'>
+            <Form.Group controlId="isadmin">
               <Form.Check
-                type='checkbox'
-                label='Es administrador'
+                type="checkbox"
+                label="Es administrador"
                 checked={isAdmin}
                 onChange={(e) => setIsAdmin(e.target.checked)}></Form.Check>
             </Form.Group>
 
-            <Button type='submit' variant='warning'>
+            <Button type="submit" variant="warning">
               Actualizar
             </Button>
           </Form>

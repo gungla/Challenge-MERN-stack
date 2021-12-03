@@ -20,6 +20,10 @@ const userSchema = mongoose.Schema(
       required: [true, 'El email es obligatorio'],
       unique: true,
     },
+    telefono: {
+      type: Number,
+      required: [true, 'El número de teléfono es oblogatios. 9 carácteres númericos'],
+    },
     ci: {
       type: Number,
       required: [true, 'La cédula de identidad es oblogatios. 8 carácteres númericos'],

@@ -13,6 +13,7 @@ const ProfileScreen = ({ history }) => {
   const [surname, setSurname] = useState('')
   const [age, setAge] = useState('')
   const [email, setEmail] = useState('')
+  const [telefono, setTelefono] = useState('')
   const [ci, setCi] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -45,6 +46,7 @@ const ProfileScreen = ({ history }) => {
         setSurname(user.surname)
         setAge(user.age)
         setEmail(user.email)
+        setTelefono(user.telefono)
         setCi(user.ci)
       }
     }
@@ -55,7 +57,7 @@ const ProfileScreen = ({ history }) => {
     if (password !== confirmPassword) {
       setMessage('Las contraseñas no coinciden')
     } else {
-      dispatch(updateUserProfile({ id: user._id, name, surname, age, email, ci, password }))
+      dispatch(updateUserProfile({ id: user._id, name, surname, age, email, telefono, ci, password }))
     }
   }
 
@@ -104,6 +106,15 @@ const ProfileScreen = ({ history }) => {
               placeholder='Ingrese su dirección de correo'
               value={email}
               onChange={(e) => setEmail(e.target.value)}></Form.Control>
+          </Form.Group>
+
+          <Form.Group controlId='telefono'>
+            <Form.Label>Teléfono</Form.Label>
+            <Form.Control
+              type='telefono'
+              placeholder='Ingrese su teléfono'
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}></Form.Control>
           </Form.Group>
 
           <Form.Group controlId='ci'>
