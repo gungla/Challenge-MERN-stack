@@ -9,8 +9,8 @@ import Order from './models/orderModel.js';
 import connectDB from './config/db.js';
 
 dotenv.config();
-
 connectDB();
+colors.enable();
 
 const importData = async () => {
   try {

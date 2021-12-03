@@ -7,9 +7,7 @@ const products = [
     brand: 'Papeleria',
     category: 'Papeleria',
     price: 99,
-    countInStock: 50,
-    rating: 4.5,
-    numReviews: 6,
+    countInStock: 0,
   },
   {
     name: 'El peor café del mundo!',
@@ -20,8 +18,6 @@ const products = [
     category: 'Comida',
     price: 29,
     countInStock: 15,
-    rating: 4.0,
-    numReviews: 8,
   },
   {
     name: 'Pedazos de madera',
@@ -32,8 +28,6 @@ const products = [
     category: 'Juegos',
     price: 50,
     countInStock: 20,
-    rating: 3,
-    numReviews: 4,
   },
   {
     name: 'Tarjetas de presentación',
@@ -44,8 +38,6 @@ const products = [
     category: 'Papeleria',
     price: 35,
     countInStock: 20,
-    rating: 5,
-    numReviews: 9,
   },
   {
     name: 'iPad Cover',
@@ -56,8 +48,6 @@ const products = [
     category: 'Accesorios',
     price: 399,
     countInStock: 12,
-    rating: 3.5,
-    numReviews: 10,
   },
   {
     name: 'Tarjetas de presentación',
@@ -68,8 +58,6 @@ const products = [
     category: 'Papeleria',
     price: 287,
     countInStock: 10,
-    rating: 4,
-    numReviews: 0,
   },
   {
     name: 'Bolsas con diseños',
@@ -80,8 +68,6 @@ const products = [
     category: 'Accesorios',
     price: 220,
     countInStock: 35,
-    rating: 4,
-    numReviews: 2,
   },
   {
     name: 'Diseño de Apps',
@@ -92,8 +78,6 @@ const products = [
     category: 'Tecnologia',
     price: 650,
     countInStock: 10,
-    rating: 4,
-    numReviews: 7,
   },
   {
     name: 'Libro con muchas letras',
@@ -104,8 +88,6 @@ const products = [
     category: 'Libros',
     price: 499,
     countInStock: 50,
-    rating: 4,
-    numReviews: 4,
   },
   {
     name: 'Camisetas con diseños',
@@ -116,8 +98,6 @@ const products = [
     category: 'Ropa',
     price: 237,
     countInStock: 10,
-    rating: 4,
-    numReviews: 6,
   },
   {
     name: 'Lapiceros',
@@ -128,8 +108,6 @@ const products = [
     category: 'Accesorios',
     price: 385,
     countInStock: 10,
-    rating: 3.5,
-    numReviews: 6,
   },
   {
     name: 'Hojas con manchas',
@@ -140,8 +118,6 @@ const products = [
     category: 'Libros',
     price: 237,
     countInStock: 11,
-    rating: 3,
-    numReviews: 5,
   },
   {
     name: 'Papeles sucios',
@@ -152,8 +128,6 @@ const products = [
     category: 'Papeleria',
     price: 99,
     countInStock: 30,
-    rating: 4.5,
-    numReviews: 9,
   },
   {
     name: 'Camisetas usadas',
@@ -164,8 +138,6 @@ const products = [
     category: 'Ropa',
     price: 53,
     countInStock: 10,
-    rating: 4,
-    numReviews: 3,
   },
   {
     name: 'Todos necesitan ropa',
@@ -176,8 +148,6 @@ const products = [
     category: 'Ropa',
     price: 20,
     countInStock: 20,
-    rating: 4,
-    numReviews: 1,
   },
   {
     name: 'Diseño de bolsa',
@@ -188,8 +158,6 @@ const products = [
     category: 'Bolsas',
     price: 48,
     countInStock: 25,
-    rating: 4,
-    numReviews: 3,
   },
   {
     name: 'Aquí los cortamos para ti',
@@ -200,8 +168,6 @@ const products = [
     category: 'Madera',
     price: 549,
     countInStock: 6,
-    rating: 3.5,
-    numReviews: 5,
   },
   {
     name: 'Cajas para cosas',
@@ -212,8 +178,6 @@ const products = [
     category: 'Cajas',
     price: 825,
     countInStock: 8,
-    rating: 4.5,
-    numReviews: 6,
   },
 ]
 

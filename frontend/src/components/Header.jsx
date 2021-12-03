@@ -58,6 +58,28 @@ const Header = () => {
                   <LinkContainer to='/profile'>
                     <NavDropdown.Item>Mi perfil</NavDropdown.Item>
                   </LinkContainer>
+                  {userInfo && userInfo.isAdmin && (
+                  <span title='Admin' id='adminmenu'>
+                    <LinkContainer to='/admin/userlist' className='btnAdmin'>
+                      <NavDropdown.Item>
+                        Usuarios
+                        <small> - solo admin</small>
+                      </NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/admin/productlist' className='btnAdmin'>
+                      <NavDropdown.Item>
+                        Productos
+                        <small> - solo admin</small>
+                      </NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/admin/orderlist' className='btnAdmin'>
+                      <NavDropdown.Item>
+                        Pedidos
+                        <small> - solo admin</small>
+                      </NavDropdown.Item>
+                    </LinkContainer>
+                  </span>
+                  )}
                   <NavDropdown.Item onClick={logoutHandler}>
                   Cerrar sesión
                   </NavDropdown.Item>
@@ -68,19 +90,6 @@ const Header = () => {
                     <i className='fas fa-user'></i> Iniciar sesión
                   </Nav.Link>
                 </LinkContainer>
-              )}
-              {userInfo && userInfo.isAdmin && (
-                <NavDropdown title='Admin' id='adminmenu'>
-                  <LinkContainer to='/admin/userlist'>
-                    <NavDropdown.Item>Usuarios</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/admin/productlist'>
-                    <NavDropdown.Item>Productos</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/admin/orderlist'>
-                    <NavDropdown.Item>Pedidos</NavDropdown.Item>
-                  </LinkContainer>
-                </NavDropdown>
               )}
             </Nav>
             <LinkContainer to='/cart'>

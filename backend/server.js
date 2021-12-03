@@ -13,8 +13,8 @@ import orderRoutes from './routes/orderRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
 dotenv.config();
-
 connectDB();
+colors.enable();
 
 const app = express();
 
