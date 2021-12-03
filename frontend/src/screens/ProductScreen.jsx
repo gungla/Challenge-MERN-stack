@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Button, Form } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Meta from '../components/Meta';
@@ -27,16 +27,6 @@ const ProductScreen = ({ history, match }) => {
 
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`)
-  }
-
-  const submitHandler = (e) => {
-    e.preventDefault()
-    dispatch(
-      createProductReview(match.params.id, {
-        rating,
-        comment,
-      })
-    )
   }
 
   return (
@@ -115,8 +105,6 @@ const ProductScreen = ({ history, match }) => {
                     </p>
                   </ListGroup.Item>
                   )}
-              
-         
               </ListGroup>
             </Col>
            

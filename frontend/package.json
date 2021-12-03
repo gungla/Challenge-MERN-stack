@@ -22,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "sass": "sass src/sass:src/css --watch --no-source-map"
+    "sass": "sass src/sass:src/css --watch --no-source-map",
+    "lint:fix": "eslint --fix ./src"
   },
   "browserslist": {
     "production": [
@@ -37,6 +38,13 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^6.0.1"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.5.0"
   }
 }

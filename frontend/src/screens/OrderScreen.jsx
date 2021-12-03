@@ -46,7 +46,7 @@ const OrderScreen = ({ match, history }) => {
       dispatch({ type: ORDER_DELIVER_RESET })
       dispatch(getOrderDetails(orderId))
      } else if (!order.isPaid) {
-      
+      // eslint 
     }
   }, [dispatch, orderId, successDeliver, order, history, userInfo])
 
