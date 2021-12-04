@@ -40,29 +40,31 @@ const UserListScreen = ({ history }) => {
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
-        <Table striped bordered hover responsive className="table-sm">
+        <Table striped hover responsive className="table-sm">
           <thead>
             <tr>
-              <th>ID</th>
               <th>NOMBRE</th>
               <th>EMAIL</th>
-              <th>ADMIN</th>
-              <th></th>
+              <th>PERMISOS</th>
+              <th>ACCIONES</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user) => (
               <tr key={user._id}>
-                <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td>
                   <a href={`mailto:${user.email}`}>{user.email}</a>
                 </td>
                 <td>
                   {user.isAdmin ? (
-                    <i className="fas fa-check" style={{ color: 'green' }}></i>
+                    <span className='stock-on'>
+                      ADMNISTRADOR
+                    </span>
                   ) : (
-                    <i className="fas fa-times" style={{ color: 'red' }}></i>
+                    <span className='stock-off'>
+                      USUARIO
+                    </span>
                   )}
                 </td>
                 <td>

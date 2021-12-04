@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -49,9 +49,6 @@ const UserEditScreen = ({ match, history }) => {
 
   return (
     <>
-      <Link to="/admin/userlist" className="btn btn-light my-3">
-        Volver
-      </Link>
       <FormContainer>
         <h1>Editar Usuario</h1>
         {loadingUpdate && <Loader />}
@@ -88,9 +85,19 @@ const UserEditScreen = ({ match, history }) => {
                 onChange={(e) => setIsAdmin(e.target.checked)}></Form.Check>
             </Form.Group>
 
-            <Button type="submit" variant="warning">
-              Actualizar
-            </Button>
+            <Row>
+              <Col md={6}>
+                <Link to="/admin/userlist" className="btn btn-dark my-3 btn-block">
+                  Cancelar
+                </Link>
+              </Col>
+              <Col md={6}>
+                <Button type="submit" variant="warning" className="my-3 btn-block">
+                  Actualizar
+                </Button> 
+              </Col>
+            </Row>
+
           </Form>
         )}
       </FormContainer>

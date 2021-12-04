@@ -96,10 +96,9 @@ const ProductListScreen = ({ history, match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Table striped bordered hover responsive className='table-sm'>
+          <Table striped hover responsive className='table-sm'>
             <thead>
               <tr>
-                <th>ID</th>
                 <th>IMAGEN</th>
                 <th>NOMBRE</th>
                 <th>PRECIO</th>
@@ -111,7 +110,6 @@ const ProductListScreen = ({ history, match }) => {
             <tbody>
               {products.map((product) => (
                 <tr key={product._id}>
-                  <td>{product._id}</td>
                   <td>
                     <img src={product.image} className='thumb-admin' alt={product.name}/>
                   </td>

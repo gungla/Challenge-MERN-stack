@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -92,9 +92,6 @@ const ProductEditScreen = ({ match, history }) => {
   }
   return (
     <>
-      <Link to='/admin/PRODUCTlist' className='btn btn-light my-3'>
-        Volver
-      </Link>
       <FormContainer>
         <h1>Editar Producto</h1>
         {loadingUpdate && <Loader />}
@@ -105,80 +102,106 @@ const ProductEditScreen = ({ match, history }) => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
-              <Form.Label>Nombre</Form.Label>
-              <Form.Control
-                type='name'
-                placeholder='Ingrese su nombre'
-                value={name}
-                onChange={(e) => setName(e.target.value)}></Form.Control>
-            </Form.Group>
 
-            <Form.Group controlId='price'>
-              <Form.Label>Precio</Form.Label>
-              <Form.Control
-                type='number'
-                placeholder='Ingrese su precio'
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}></Form.Control>
-            </Form.Group>
+            <Row>
+              <Col md={6}>
 
-            <Form.Group controlId='image'>
-              <Form.Label>Imagen</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Ingrese Url de la imagen'
-                value={image}
-                onChange={(e) => setImage(e.target.value)}></Form.Control>
-              <Form.File
-                id='image-file'
-                label='Choose File'
-                custom
-                onChange={uploadFileHandler}></Form.File>
-              {uploading && <Loader />}
-            </Form.Group>
+                <Form.Group controlId='name'>
+                  <Form.Label>Nombre</Form.Label>
+                  <Form.Control
+                    type='name'
+                    placeholder='Ingrese su nombre'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}></Form.Control>
+                </Form.Group>
 
-            <Form.Group controlId='brand'>
-              <Form.Label>Marca</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Ingrese marca del producto'
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}></Form.Control>
-            </Form.Group>
+                <Form.Group controlId='price'>
+                  <Form.Label>Precio</Form.Label>
+                  <Form.Control
+                    type='number'
+                    placeholder='Ingrese su precio'
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}></Form.Control>
+                </Form.Group>
 
-            <Form.Group controlId='countInStock'>
-              <Form.Label>Cuenta en stock</Form.Label>
-              <Form.Control
-                type='number'
-                placeholder='Ingrese stock disponible'
-                value={countInStock}
-                onChange={(e) =>
-                  setCountInStock(e.target.value)
-                }></Form.Control>
-            </Form.Group>
+                <Form.Group controlId='brand'>
+                  <Form.Label>Marca</Form.Label>
+                  <Form.Control
+                    type='text'
+                    placeholder='Ingrese marca del producto'
+                    value={brand}
+                    onChange={(e) => setBrand(e.target.value)}></Form.Control>
+                </Form.Group>
+                
+              </Col>
+              <Col md={6}>
 
-            <Form.Group controlId='category'>
-              <Form.Label>Categoria</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Ingrese categoria del producto'
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}></Form.Control>
-            </Form.Group>
+                <Form.Group controlId='countInStock'>
+                  <Form.Label>Cuenta en stock</Form.Label>
+                  <Form.Control
+                    type='number'
+                    placeholder='Ingrese stock disponible'
+                    value={countInStock}
+                    onChange={(e) =>
+                      setCountInStock(e.target.value)
+                    }></Form.Control>
+                </Form.Group>
 
-            <Form.Group controlId='description'>
-              <Form.Label>Descripción</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Ingrese descricpión del producto'
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}></Form.Control>
-            </Form.Group>
+                <Form.Group controlId='category'>
+                  <Form.Label>Categoria</Form.Label>
+                  <Form.Control
+                    type='text'
+                    placeholder='Ingrese categoria del producto'
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}></Form.Control>
+                </Form.Group>
 
-            <Button type='submit' variant='warning'>
-              Actualizar
-            </Button>
+                <Form.Group controlId='description'>
+                  <Form.Label>Descripción</Form.Label>
+                  <Form.Control
+                    type='text'
+                    placeholder='Ingrese descricpión del producto'
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}></Form.Control>
+                </Form.Group>
+
+              </Col>
+              <Col>
+              
+                <Form.Group controlId='image'>
+                  <Form.Label>Imagen</Form.Label>
+                  <Form.Control
+                    type='text'
+                    placeholder='Ingrese Url de la imagen'
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}></Form.Control>
+                  <Form.File
+                    id='image-file'
+                    label='Choose File'
+                    custom
+                    onChange={uploadFileHandler}></Form.File>
+                  {uploading && <Loader />}
+                </Form.Group>
+
+              </Col>
+
+            </Row>
+
+
+            <Row>
+              <Col md={6}>
+                <Link to='/admin/PRODUCTlist' className="btn btn-dark my-3 btn-block">
+                  Cancelar
+                </Link>
+              </Col>
+              <Col md={6}>
+                <Button type='submit' variant='warning' className="my-3 btn-block">
+                  Actualizar
+                </Button>
+              </Col>
+            </Row>
+
+
           </Form>
         )}
       </FormContainer>

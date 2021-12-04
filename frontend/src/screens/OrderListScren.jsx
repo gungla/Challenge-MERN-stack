@@ -31,10 +31,9 @@ const OrderListScreen = ({ history }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Table striped bordered hover responsive className='table-sm'>
+        <Table striped hover responsive className='table-sm'>
           <thead>
             <tr>
-              <th>ID</th>
               <th>USUARIO</th>
               <th>FECHA</th>
               <th>TOTAL</th>
@@ -45,7 +44,6 @@ const OrderListScreen = ({ history }) => {
           <tbody>
             {orders.map((order) => (
               <tr key={order._id}>
-                <td>{order._id}</td>
                 <td>{order.user && order.user.name}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
                 <td>$ {order.totalPrice}</td>
@@ -53,13 +51,15 @@ const OrderListScreen = ({ history }) => {
                   {order.isDelivered ? (
                     order.deliveredAt.substring(0, 10)
                   ) : (
-                    <i className='fas fa-times' style={{ color: 'red' }}></i>
+                    <span className='stock-off'>
+                      NO ENTREGADO
+                    </span>
                   )}
                 </td>
                 <td>
                   <LinkContainer to={`/order/${order._id}`}>
                     <Button variant='light' className='btn-sm'>
-                      Detalles
+                       Ver pedido
                     </Button>
                   </LinkContainer>
                 </td>
