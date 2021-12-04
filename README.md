@@ -11,19 +11,18 @@
 ## Características
 
 - Carrito de compras con todas las funciones.
-- Reseñas y valoraciones de productos.
 - Paginación de productos.
 - Página de detalle de producto.
 - Función de búsqueda de productos.
-- Perfil de usuario y el usuario puede ver el estado de su pedido.
+- Perfil de usuario, edición de su iformación y puede ver el estado de su pedido.
 - Gestión de productos solo perfil de administrador.
 - Gestión de usuarios solo perfil de administrador.
 - Página de detalles de la orden solo perfil administrador.
 - Marcar pedidos como entregado solo perfil administrador.
 - El administrador puede procesar el estado del pedido.
-- Seeder base de datos (productos y usuarios).
 - El administrador recibe un mail a ethereal cuando se realizo un pedido.
 - El usuario recibe un mail con el pedido fue completado.
+- Seeder base de datos (productos y usuarios).
 - Test unitarios con Jest.
 
 ## Configurar .env
