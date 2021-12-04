@@ -14,7 +14,7 @@
 - Paginación de productos.
 - Página de detalle de producto.
 - Función de búsqueda de productos.
-- Perfil de usuario, edición de su iformación y puede ver el estado de su pedido.
+- Perfil de usuario, edición de su información y puede ver el estado de su pedido.
 - Gestión de productos solo perfil de administrador.
 - Gestión de usuarios solo perfil de administrador.
 - Página de detalles de la orden solo perfil administrador.
