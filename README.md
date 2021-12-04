@@ -24,6 +24,7 @@
 - Seeder base de datos (productos y usuarios).
 - El administrador recibe un mail a ethereal cuando se realizo un pedido.
 - El usuario recibe un mail con el pedido fue completado.
+- Test unitarios con Jest.
 
 ## Configurar .env
 

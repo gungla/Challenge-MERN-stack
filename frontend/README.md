@@ -2,8 +2,11 @@
 
 Frontend funcional de ecommerce
 
-## Scripts
+## Configurar .env
 
+SKIP_PREFLIGHT_CHECK=true
+
+## Scripts
 
 En el directorio del proyecto, puede ejecutar:
 
