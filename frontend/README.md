@@ -46,3 +46,7 @@ No es necesario que utilice nunca "eject". El conjunto de funciones seleccionada
 ### `npm build` no se minimiza
 
 Esta sección se ha trasladado aquí: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/ troubleshooting # npm-run-build-fail-to-minify)
+
+# Documentación
+
+> Ver : [documentación backend](https://github.com/gungla/Challenge-MERN-stack)

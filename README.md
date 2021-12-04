@@ -39,4 +39,4 @@
 
 # Documentación
 
-> Ver : [documentación](https://gungla-mern.herokuapp.com/api/products)
+> Ver : [documentación frontend](https://github.com/gungla/Challenge-MERN-stack/tree/main/frontend)
