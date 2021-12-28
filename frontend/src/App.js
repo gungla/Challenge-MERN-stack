@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import About from './components/About';
-import Contact from './components/Contact';
 import Notfound from './components/Notfound';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -20,6 +18,7 @@ import UserEditScreen from './screens/UserEditScren';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScren';
+import Chat from './components/Chat';
 
 const App = () => {
   return (
@@ -50,15 +49,15 @@ const App = () => {
             <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
             <Route path="/admin/orderlist" component={OrderListScreen} />
             <Route path="/search/:keyword" component={HomeScreen} exact />
+            <Route path="/products/:keyword" component={HomeScreen} exact />
             <Route path="/page/:pageNumber" component={HomeScreen} exact />
             <Route
               path="/search/:keyword/page/:pageNumber"
               component={HomeScreen}
               exact
             />
+            <Route path="/chat" component={Chat} exact />
             <Route path="/" component={HomeScreen} exact />
-            <Route path="/about" component={About} exact />
-            <Route path="/contact" component={Contact} exact />
             <Route path="*">
               <Notfound />
             </Route>

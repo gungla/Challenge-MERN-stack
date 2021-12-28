@@ -19,6 +19,9 @@ const Header = () => {
   const cart = useSelector((state) => state.cart)
   const { cartItems } = cart
 
+  // const productList = useSelector((state) => state.productList)
+  // const { products } = productList
+
   return (
     <header>
       <Navbar className='bg_nav' variant='light' expand='lg' collapseOnSelect>
@@ -31,8 +34,8 @@ const Header = () => {
                 width='27'
                 height='25'
                 className='d-inline-block align-top colorLogo'
-              />{' '}
-              Mern FS
+              />
+              <span className='ml-1'>Mern FS</span> 
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -42,16 +45,72 @@ const Header = () => {
                 Tienda
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/about'>
+            <LinkContainer to='/chat'>
               <Nav.Link>
-                Sobre mi
+                Chat
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/contact'>
-              <Nav.Link>
-                Contacto
-              </Nav.Link>
-            </LinkContainer>
+            <NavDropdown title='Categorias'>
+              {/* {products.map((product) => (
+              <span key={product._id}>  
+                <LinkContainer to={/products/ + product.category}>
+                  <Nav.Link>
+                  {product.category}
+                  </Nav.Link>
+                </LinkContainer>
+              </span>
+              ))} */}
+              <LinkContainer to='/products/accesorios'>
+                <Nav.Link>
+                  Accesorios
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/bolsas'>
+                <Nav.Link>
+                  Bolsas
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/cajas'>
+                <Nav.Link>
+                  Cajas
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/comida'>
+                <Nav.Link>
+                  Comida
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/madera'>
+                <Nav.Link>
+                  Maderas
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/libros'>
+                <Nav.Link>
+                  Libros
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/juegos'>
+                <Nav.Link>
+                  Juegos
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/papeleria'>
+                <Nav.Link>
+                  Papeleria
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/ropa'>
+                <Nav.Link>
+                  Ropa
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/products/tecnologia'>
+                <Nav.Link>
+                  Tecnologia
+                </Nav.Link>
+              </LinkContainer>
+            </NavDropdown>
             <Nav className='ml-auto'>
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id='username'>
