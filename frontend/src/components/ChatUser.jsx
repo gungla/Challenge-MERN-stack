@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import socketIOClient from "socket.io-client";
 
+require('dotenv').config();
+
 const NEW_MESSAGE_EVENT = "new-message-event";
-const SOCKET_SERVER_URL = "http://localhost:4004";
+const SOCKET_SERVER_URL = `http://localhost:${process.env.REACT_APP_API_KEY}`;
 
 const useChatRoom = () => {
   const [messages, setMessages] = useState([]);
